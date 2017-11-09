@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+<RelativeLayout 
+   android:id = "@+id/container"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <RelativeLayout
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:id= "@+id/edit_bottombar"
+	  android:layout_alignParentBottom = "true">
+     <Button android:id="@+id/btn_disconnect"
+			android:layout_width="65dp" 
+			android:layout_height="wrap_content"  
+			android:layout_alignParentLeft ="true"
+			android:text="断开"/> 
+		<Button android:id="@+id/btn_msg_send"
+			android:layout_width="65dp" 
+			android:layout_height="wrap_content"  
+			android:layout_alignParentRight ="true"
+			android:text="发送"/> 
+	
+	   <EditText  
+             android:layout_width="fill_parent"  
+             android:layout_height = "wrap_content"  
+             android:layout_toLeftOf="@id/btn_msg_send"  
+             android:layout_toRightOf="@+id/btn_disconnect"                
+             android:hint = "说点什么呢?"  
+             android:textSize="15dip"  
+             android:id = "@+id/MessageText"/>  
+	</RelativeLayout> 
+	<LinearLayout
+	     android:layout_above="@id/edit_bottombar"
+	  
+	     android:layout_width="wrap_content"
+	     android:layout_height="fill_parent" 
+	     
+	    >
+	     <!-- 重点：android:layout_above="@id/edit_bottombar"把这一行放在这解决了ListView覆盖EditView的问题 -->
+	 <ListView
+	     android:id="@+id/list"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	    android:layout_below="@id/container"
+	     android:layout_weight="1.0"
+	     android:divider="#ffc6c6c6"
+	     android:scrollingCache="false"
+	     android:visibility="visible" />
+</LinearLayout>	 
+	 <TableLayout
+	     android:layout_marginLeft="150dp"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" >
+
+	     <TableRow
+	         android:id="@+id/tableRow1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content" >
+
+	         <Button
+	             android:id="@+id/button1"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="Button"
+	             android:visibility="invisible" />
+
+	         <Button
+	             android:id="@+id/start"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:layout_marginRight="0dp"
+	             android:text="start"
+	             android:width="120px" />
+	           <Button
+	             android:id="@+id/button3"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="Button"
+	             android:visibility="invisible" />
+	     </TableRow>
+
+	     <TableRow
+	         android:id="@+id/tableRow2"
+	         android:layout_width="wrap_content"
+	         android:layout_height="0dp"
+	         android:layout_weight="1" >
+
+	         <Button
+	             android:id="@+id/left"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:layout_marginRight="0dp"
+	             android:text="left"
+	             android:width="120px" />
+
+	         <Button
+	             android:id="@+id/stop"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="stop"
+	             android:width="120px" />
+
+	         <Button
+	             android:id="@+id/right"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="right"
+	             android:width="120px" />
+	     </TableRow>
+
+	     <TableRow
+	         android:id="@+id/tableRow3"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content" >
+
+	         <Button
+	             android:id="@+id/button2"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="Button"
+	             android:visibility="invisible" />
+
+	         <Button
+	             android:id="@+id/back"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="Back" />
+	     </TableRow>
+	 </TableLayout>
+</RelativeLayout>
+</LinearLayout>
